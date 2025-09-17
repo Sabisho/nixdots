@@ -9,10 +9,39 @@
   ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
+  boot = {
+    # Bootloader configuration
+    loader = {
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
+      # Hide the OS choice for bootloaders.
+      # It's still possible to open the bootloader list by pressing any key
+      # It will just not appear on screen unless a key is pressed
+      timeout = 0;
+    };
 
-  # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+    # Plymouth boot splash
+    plymouth = {
+      enable = true;
+      theme = "rings";
+      themePackages = with pkgs; [
+        (adi1090x-plymouth-themes.override {
+          selected_themes = ["rings"];
+        })
+      ];
+    };
+
+    # Silent boot configuration
+    consoleLogLevel = 3;
+    initrd.verbose = false;
+    kernelParams = [
+      "quiet"
+      "splash"
+      "boot.shell_on_fail"
+      "udev.log_priority=3"
+      "rd.systemd.show_status=auto"
+    ];
+  };
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -112,6 +141,7 @@
     eza
     distrobox
     alejandra # nix code formatter
+    qbittorrent
   ];
   hardware.graphics = {
     # hardware.graphics since NixOS 24.11
@@ -133,7 +163,25 @@
   ];
 
   services.gvfs.enable = true;
-  services.mpd.enable = true;
+  # MPD
+  services.mpd = {
+    enable = true;
+    musicDirectory = "/home/ayush/Music";
+    extraConfig = ''
+      audio_output {
+        type "pipewire"
+        name "My PipeWire Output"
+      }
+    '';
+    user = "ayush";
+    # Optional:
+    network.listenAddress = "any"; # if you want to allow non-localhost connections
+    startWhenNeeded = true; # systemd feature: only start MPD service upon connection to its socket
+  };
+  systemd.services.mpd.environment = {
+    # https://gitlab.freedesktop.org/pipewire/pipewire/-/issues/609
+    XDG_RUNTIME_DIR = "/run/user/1000"; # User-id 1000 must match above user. MPD will look inside this directory for the PipeWire socket.
+  };
 
   programs.virt-manager.enable = true;
 
