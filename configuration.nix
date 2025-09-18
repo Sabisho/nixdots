@@ -9,7 +9,10 @@
   ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
+
   boot = {
+    # Latest Linux Kernel
+    kernelPackages = pkgs.linuxPackages_latest;
     # Bootloader configuration
     loader = {
       systemd-boot.enable = true;
@@ -124,9 +127,15 @@
 
   programs.niri.enable = true;
 
-  programs.waybar.enable = true;
+  services.displayManager.gdm.enable = true;
 
-  # xdg.portal = { enable = true; extraPortals = [ pkgs.xdg-desktop-portal-gtk ]; };
+  xdg.portal = {
+    enable = true;
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-gtk
+      xdg-desktop-portal-gnome
+    ];
+  };
 
   programs.fish.enable = true;
 
@@ -144,12 +153,12 @@
     helix
     fd
     zoxide
+    bat
     atuin
     starship
-    rofi
     yazi
-    alacritty
     mpv
+    papers
     fuzzel
     ghostty
     swww
@@ -157,7 +166,6 @@
     nwg-look
     kdePackages.qt6ct
     libsForQt5.qt5ct
-    xfce.thunar
     nautilus
     gnome-themes-extra
     papirus-icon-theme
@@ -176,12 +184,16 @@
     distrobox
     alejandra # nix code formatter
     qbittorrent
+    waybar
+    libreoffice-fresh
+    gimp3
   ];
   hardware.graphics = {
     # hardware.graphics since NixOS 24.11
     enable = true;
     extraPackages = with pkgs; [
       intel-media-driver # LIBVA_DRIVER_NAME=iHD
+      vpl-gpu-rt
       # intel-vaapi-driver # LIBVA_DRIVER_NAME=i965 (older but works better for Firefox/Chromium)
       # libvdpau-va-gl
     ];
@@ -194,6 +206,8 @@
     liberation_ttf
     nerd-fonts.symbols-only
     jetbrains-mono
+    corefonts
+    vista-fonts
   ];
 
   services.gvfs.enable = true;
