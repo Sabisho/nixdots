@@ -1,5 +1,5 @@
 {
-  description = "A very basic flake";
+  description = "Helixoid's NixOS flake!";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
@@ -15,7 +15,7 @@
     zen-browser,
     ...
   } @ inputs: {
-    # Please replace my-nixos with your hostname
+    # Please replace nixos with your hostname
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       specialArgs = { inherit inputs; };
       modules = [
