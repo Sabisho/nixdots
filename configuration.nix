@@ -11,7 +11,8 @@
     # ./modules/git.nix # Use Home Manager for these kinds of stuff
     ./modules/bluetooth.nix
     ./modules/nvidia.nix
-    ./modules/hyprland.nix
+    # ./modules/hyprland.nix
+    ./modules/razer.nix
   ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
@@ -92,9 +93,9 @@
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.ayush = {
+  users.users.klynt = {
     isNormalUser = true;
-    description = "Ayush Raj";
+    description = "klynt";
     extraGroups = ["networkmanager" "wheel"];
     packages = with pkgs; [];
   };
@@ -188,7 +189,6 @@
     xwayland-satellite
     gnome-disk-utility
     rewaita
-    ventoy
   ];
 
   services.xserver.videoDrivers = ["nvidia"];
@@ -221,14 +221,14 @@
   # MPD
   services.mpd = {
     enable = true;
-    musicDirectory = "/home/ayush/Music";
+    musicDirectory = "/home/klynt/Music";
     extraConfig = ''
       audio_output {
         type "pipewire"
         name "My PipeWire Output"
       }
     '';
-    user = "ayush";
+    user = "klynt";
     # Optional:
     network.listenAddress = "any"; # if you want to allow non-localhost connections
     startWhenNeeded = true; # systemd feature: only start MPD service upon connection to its socket
@@ -243,7 +243,7 @@
 
   virtualisation.libvirtd.enable = true;
 
-  users.groups.libvirtd.members = ["ayush"];
+  users.groups.libvirtd.members = ["klynt"];
 
   virtualisation.podman = {
     enable = true;
