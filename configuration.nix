@@ -209,8 +209,7 @@
     noto-fonts-cjk-sans
     noto-fonts-emoji
     liberation_ttf
-    nerd-fonts.symbols-only
-    jetbrains-mono
+    nerd-fonts.jetbrains-mono
     corefonts
     vista-fonts
   ];

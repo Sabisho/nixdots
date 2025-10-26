@@ -2,7 +2,7 @@
 @import "mocha.css";
 * {
   /* all: unset; */
-  font-family: "Adwaita Sans, Symbols Nerd Font";
+  font-family: "Adwaita Sans, JetBrainsMono Nerd Font Propo";
   font-size: 15px;
 }
 
@@ -96,17 +96,17 @@ window#waybar.empty #window {
   border-radius: 7rem;
 }
 
-#custom-arch {
+#custom-logo {
   margin-left: 5px;
   padding: 0 10px;
-  font-size: 25px;
+  /* font-size: 25px; */
   background-color: transparent;
   border-radius: 7rem;
   /*border-width: 2px;
 	border-style: solid;
 	border-color: @teal;*/
 }
-#custom-arch:hover {
+#custom-logo:hover {
   background-color: @maroon;
   color: @brown;
 }

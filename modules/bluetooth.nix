@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   hardware.bluetooth = {
     enable = true;
-    powerOnBoot = false;
+    # powerOnBoot = false;
     # settings = {
     #   General = {
     #     # Shows battery charge of connected devices on supported
@@ -14,7 +14,8 @@
     #   };
     # };
   };
+  # services.blueman.enable = true;
   environment.systemPackages = with pkgs; [
-    blueman
+    overskride
   ];
 }
