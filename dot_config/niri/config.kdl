@@ -4,9 +4,13 @@ input {
             layout "us"
         }
     }
+    mouse {
+        accel-profile "flat"
+    }
     touchpad {
         tap
         natural-scroll
+        accel-profile "adaptive"
     }
     focus-follows-mouse
 }
@@ -293,8 +297,8 @@ screenshot-path "~/Pictures/Screenshots/Screenshot From %Y-%m-%d %H-%M-%S.png"
 prefer-no-csd
 environment {
     QT_QPA_PLATFORM "wayland"
-    DISPLAY ":0" // This is for xwayland satalite!!
-    QT_QPA_PLATFORMTHEME "qt6ct"
+    DISPLAY ":0"
+ // This is for xwayland satalite!!    QT_QPA_PLATFORMTHEME "qt6ct"
 }
 hotkey-overlay {
     skip-at-startup
