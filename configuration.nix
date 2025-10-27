@@ -168,6 +168,7 @@
     gpu-screen-recorder
     nixd
     mako
+    libnotify
     rmpc
     mission-center
     apple-cursor
