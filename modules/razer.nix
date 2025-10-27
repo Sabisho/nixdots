@@ -1,6 +1,6 @@
-{ pkgs, ... }: {
+{ pkgs, username, ... }: {
   hardware.openrazer.enable = true;
-  hardware.openrazer.users = ["klynt"];
+  hardware.openrazer.users = ["${username}"];
   environment.systemPackages = [
     pkgs.polychromatic
   ];

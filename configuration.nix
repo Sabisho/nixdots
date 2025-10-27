@@ -2,10 +2,11 @@
   config,
   pkgs,
   inputs,
+  username,
+  hostname,
   ...
 }: {
   imports = [
-    # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ./modules/gaming.nix
     # ./modules/git.nix # Use Home Manager for these kinds of stuff
@@ -40,31 +41,7 @@
     blacklistedKernelModules = ["nouveau"];
   };
 
-  # # Disabling Nvidia GPU on Laptop for better battery life
-  # boot.extraModprobeConfig = ''
-  #   blacklist nouveau
-  #   options nouveau modeset=0
-  # '';
-
-  # services.udev.extraRules = ''
-  #   # Remove NVIDIA USB xHCI Host Controller devices, if present
-  #   ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x0c0330", ATTR{power/control}="auto", ATTR{remove}="1"
-  #   # Remove NVIDIA USB Type-C UCSI devices, if present
-  #   ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x0c8000", ATTR{power/control}="auto", ATTR{remove}="1"
-  #   # Remove NVIDIA Audio devices, if present
-  #   ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x040300", ATTR{power/control}="auto", ATTR{remove}="1"
-  #   # Remove NVIDIA VGA/3D controller devices
-  #   ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x03[0-9]*", ATTR{power/control}="auto", ATTR{remove}="1"
-  # '';
-  # boot.blacklistedKernelModules = ["nouveau" "nvidia" "nvidia_drm" "nvidia_modeset"];
-
-  networking.hostName = "nixos"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
+  networking.hostName = hostname; # Define your hostname.
   # Enable networking
   networking.networkmanager.enable = true;
 
@@ -72,7 +49,7 @@
   time.timeZone = "Asia/Kolkata";
 
   # Select internationalisation properties.
-  i18n.defaultLocale = "en_IN";
+  i18n.defaultLocale = "en_US.UTF-8";
 
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "en_IN";
@@ -93,10 +70,12 @@
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.klynt = {
+  users.users.${username} = {
     isNormalUser = true;
-    description = "klynt";
+    description = "Klynt";
     extraGroups = ["networkmanager" "wheel"];
+    shell = pkgs.fish;
+    home = "/home/${username}";
     packages = with pkgs; [];
   };
 
@@ -134,10 +113,6 @@
 
   programs.fish.enable = true;
 
-  users.defaultUserShell = pkgs.fish;
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
   environment.systemPackages = with pkgs; [
     git
     cava
@@ -178,7 +153,7 @@
     yt-dlp
     eza
     distrobox
-    alejandra # nix code formatter
+    alejandra
     qbittorrent
     waybar
     gimp3
@@ -221,14 +196,14 @@
   # MPD
   services.mpd = {
     enable = true;
-    musicDirectory = "/home/klynt/Music";
+    musicDirectory = "/home/${username}/Music";
     extraConfig = ''
       audio_output {
         type "pipewire"
         name "My PipeWire Output"
       }
     '';
-    user = "klynt";
+    user = "${username}";
     # Optional:
     network.listenAddress = "any"; # if you want to allow non-localhost connections
     startWhenNeeded = true; # systemd feature: only start MPD service upon connection to its socket
@@ -243,7 +218,7 @@
 
   virtualisation.libvirtd.enable = true;
 
-  users.groups.libvirtd.members = ["klynt"];
+  users.groups.libvirtd.members = ["${username}"];
 
   virtualisation.podman = {
     enable = true;
@@ -256,30 +231,7 @@
     options = "--delete-older-than 3d";
   };
 
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
-  # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
   networking.firewall.enable = true;
 
-  # This value determines the NixOS release from which the default
-  # settings for stateful data, like file locations and database versions
-  # on your system were taken. It‘s perfectly fine and recommended to leave
-  # this value at the release version of the first install of this system.
-  # Before changing this value read the documentation for this option
-  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "25.05"; # Did you read the comment?
 }

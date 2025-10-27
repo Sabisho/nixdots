@@ -1,12 +1,18 @@
 {
-  description = "Helixoid's NixOS flake!";
+  description = "Klynt's NixOS config based on Niri";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs"; # ensures both use same nixpkgs version
     };
+
+    # (Optional) Home Manager — uncomment when you start using it
+    # home-manager = {
+    #   url = "github:nix-community/home-manager";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
   };
 
   outputs = {
@@ -14,14 +20,28 @@
     nixpkgs,
     zen-browser,
     ...
-  } @ inputs: {
-    # Please replace nixos with your hostname
-    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-      specialArgs = { inherit inputs; };
+  } @ inputs: let
+    system = "x86_64-linux"; # CPU architecture
+    username = "klynt"; # Main user
+    hostname = "Nix-Acer"; # System hostname
+  in {
+    nixosConfigurations.${hostname} = nixpkgs.lib.nixosSystem {
+      inherit system;
+
+      specialArgs = {
+        inherit username hostname inputs;
+      };
+
       modules = [
-        # Import the previous configuration.nix we used,
-        # so the old configuration file still takes effect
-        ./configuration.nix
+        ./configuration.nix # your main system config
+
+        # (Optional) Add home-manager here later:
+        # home-manager.nixosModules.home-manager
+        # {
+        #   home-manager.useGlobalPkgs = true;
+        #   home-manager.useUserPackages = true;
+        #   home-manager.users.${username} = import ./home.nix;
+        # }
       ];
     };
   };
