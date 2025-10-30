@@ -8,7 +8,9 @@
 }: {
   imports = [
     ./hardware-configuration.nix
+    ./modules/pipewire.nix
     ./modules/gaming.nix
+    ./modules/editor.nix
     # ./modules/git.nix # Use Home Manager for these kinds of stuff
     ./modules/bluetooth.nix
     ./modules/nvidia.nix
@@ -120,7 +122,6 @@
     brightnessctl
     wget
     fastfetch
-    helix
     fd
     zoxide
     bat
@@ -153,7 +154,6 @@
     yt-dlp
     eza
     distrobox
-    alejandra
     qbittorrent
     waybar
     gimp3
@@ -183,7 +183,7 @@
     adwaita-fonts
     noto-fonts
     noto-fonts-cjk-sans
-    noto-fonts-emoji
+    noto-fonts-color-emoji
     liberation_ttf
     nerd-fonts.jetbrains-mono
     corefonts

@@ -2,8 +2,8 @@
 @import "mocha.css";
 * {
   /* all: unset; */
-  font-family: "Adwaita Sans, JetBrainsMono Nerd Font Propo";
-  font-size: 15px;
+  font-family: "JetBrainsMono Nerd Font Propo";
+  font-size: 16px;
 }
 
 window#waybar {

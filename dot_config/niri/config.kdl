@@ -300,7 +300,7 @@ prefer-no-csd
 environment {
     QT_QPA_PLATFORM "wayland"
     DISPLAY ":0"
- // This is for xwayland satalite!!    QT_QPA_PLATFORMTHEME "qt6ct"
+    QT_QPA_PLATFORMTHEME "qt6ct"
 }
 hotkey-overlay {
     skip-at-startup
