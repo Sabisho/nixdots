@@ -10,9 +10,9 @@
     ];
   };
   environment.systemPackages = with pkgs; [
+    apple-cursor
     brightnessctl
     fuzzel
-    ghostty
     gnome-themes-extra
     gpu-screen-recorder-gtk
     hypridle
@@ -21,9 +21,7 @@
     libnotify
     libsForQt5.qt5ct
     mako
-    nautilus
     nwg-look
-    papers
     papirus-icon-theme
     polkit_gnome
     swayimg

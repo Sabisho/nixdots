@@ -4,7 +4,6 @@
   ...
 }: {
   environment.systemPackages = with pkgs; [
-    apple-cursor
     distrobox
     gimp3
     gnome-disk-utility
@@ -17,5 +16,7 @@
     rewaita
     zed-editor
     libreoffice-fresh
+    nautilus
+    papers
   ];
 }
