@@ -1,26 +1,23 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ./modules/applications.nix
-    ./modules/bluetooth.nix
-    ./modules/boot.nix
-    ./modules/editor.nix
-    ./modules/fonts.nix
-    ./modules/gaming.nix
-    ./modules/laptop-power-management.nix
-    ./modules/locale.nix
-    # ./modules/media-server.nix
-    ./modules/mpd.nix
-    ./modules/networking.nix
-    ./modules/nixgc.nix
-    ./modules/nvidia.nix
-    ./modules/pipewire.nix
-    ./modules/razer.nix
-    ./modules/terminal.nix
-    ./modules/user-account.nix
-    ./modules/video-drivers.nix
-    ./modules/virtualization.nix
-    ./modules/window-manager.nix
+    ./modules/core/applications.nix
+    ./modules/core/bluetooth.nix
+    ./modules/core/boot.nix
+    ./modules/core/editor.nix
+    ./modules/core/fonts.nix
+    ./modules/core/gaming.nix
+    ./modules/core/laptop-power-management.nix
+    ./modules/core/locale.nix
+    ./modules/core/mpd.nix
+    ./modules/core/networking.nix
+    ./modules/core/nixgc.nix
+    ./modules/core/pipewire.nix
+    ./modules/core/razer.nix
+    ./modules/core/terminal.nix
+    ./modules/core/user-account.nix
+    ./modules/core/virtualization.nix
+    ./modules/core/window-manager.nix
   ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];

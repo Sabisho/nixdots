@@ -1,6 +1,0 @@
-inherits = "onedark"
-"ui.background" = {}
-"ui.popup" = {}
-"ui.completion" = {}
-"ui.menu" = {}
-"ui.help" = {}
