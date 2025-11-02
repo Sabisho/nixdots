@@ -3,66 +3,88 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
-      inputs.nixpkgs.follows = "nixpkgs"; # ensures both use same nixpkgs version
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # (Optional) Home Manager — uncomment when you start using it
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = {
-    self,
+  outputs = inputs @ {
     nixpkgs,
-    zen-browser,
     home-manager,
     ...
-  } @ inputs: let
-    system = "x86_64-linux"; # CPU architecture
-    username = "klynt"; # Main user
-    hostname = "Nix-Acer"; # System hostname
-    # Set your profile here - change this to "amd", "intel", or "nvidia"
-    profile = "nvidia-prime";
-
-    # Map profiles to their respective driver modules
-    driverModules = {
-      amd = ./modules/drivers/amd.nix;
-      intel = ./modules/drivers/intel.nix;
-      nvidia = ./modules/drivers/nvidia.nix;
-      nvidia-prime = ./modules/drivers/nvidia-prime.nix;
-    };
-  in {
-    nixosConfigurations.${hostname} = nixpkgs.lib.nixosSystem {
-      inherit system;
-
-      specialArgs = {
-        inherit username hostname inputs profile;
+  }: let
+    # ====================
+    # Configuration Options
+    # ====================
+    machines = {
+      # Laptops
+      Athena = {
+        system = "x86_64-linux";
+        username = "klynt";
+        profile = "nvidia-prime";
+        type = "laptop";
       };
 
-      modules = [
-        ./configuration.nix # your main system config
-        # Only import the selected driver module
-        driverModules.${profile}
+      # Desktops
+      Nix-Desktop = {
+        system = "x86_64-linux";
+        username = "klynt";
+        profile = "amd";
+        type = "desktop";
+      };
 
-        # (Optional) Add home-manager here later:
-        home-manager.nixosModules.home-manager
-        {
-          home-manager = {
-            useGlobalPkgs = true;
-            useUserPackages = true;
-            backupFileExtension = "hmbkp";
-            users.${username} = import ./modules/home/home.nix;
-            # Pass extra arguments to home.nix
-            extraSpecialArgs = {
-              inherit username hostname;
-            };
-          };
-        }
-      ];
+      Aeirith = {
+        system = "x86_64-linux";
+        username = "klynt";
+        profile = "nvidia";
+        type = "desktop";
+      };
     };
+
+    # ====================
+    # System Builder
+    # ====================
+    mkSystem = hostname: cfg:
+      nixpkgs.lib.nixosSystem {
+        system = cfg.system;
+
+        specialArgs = {
+          inherit inputs hostname;
+          inherit (cfg) username profile type;
+        };
+
+        modules = [
+          ./hosts/${cfg.type}/${hostname}/configuration.nix
+          ./modules/drivers/${cfg.profile}.nix
+
+          home-manager.nixosModules.home-manager
+          {
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              backupFileExtension = "hmbkp";
+              users.${cfg.username} = import ./modules/home/home.nix;
+              extraSpecialArgs = {
+                inherit hostname;
+                inherit (cfg) username type;
+              };
+            };
+          }
+        ];
+      };
+
+    # Helper to convert machines to nixosConfigurations
+    mkConfigurations = machines:
+      builtins.mapAttrs (hostname: cfg: mkSystem hostname cfg) machines;
+  in {
+    # System configurations
+    nixosConfigurations = mkConfigurations machines;
   };
 }
