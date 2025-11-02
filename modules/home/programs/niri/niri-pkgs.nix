@@ -13,7 +13,6 @@
     libnotify
     # mako
     polkit_gnome
-    swayimg
     swww
     waypaper
     wl-clipboard

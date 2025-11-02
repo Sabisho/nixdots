@@ -37,6 +37,7 @@
     ./programs/mako
     ./programs/mpv
     ./programs/newsraft
+    ./programs/swayimg
     ./theming
     # inputs.zen-browser.homeModules.beta
   ];
