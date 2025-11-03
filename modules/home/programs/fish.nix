@@ -13,7 +13,9 @@
 
     shellAliases = {
       typ = "ttyper";
-      nixgc = "sudo nix-collect-garbage -d";
+      ngc = "sudo nix-collect-garbage -d";
+      nrs = "sudo nixos-rebuild switch --flake";
+      nrb = "sudo nixos-rebuild boot --flake";
       hmv = "echo $(SHELL)";
       h = "hx";
       v = "nvim";
