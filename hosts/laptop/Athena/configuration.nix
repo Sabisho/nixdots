@@ -1,4 +1,4 @@
-{
+{stateVersion, ...}: {
   imports = [
     ./hardware-configuration.nix
     ../../../modules/core/applications.nix
@@ -23,14 +23,11 @@
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
   services = {
     fstrim.enable = true;
     gvfs.enable = true;
     gnome.gnome-keyring.enable = true;
   };
 
-  system.stateVersion = "25.05"; # Did you read the comment?
+  system.stateVersion = stateVersion; # Did you read the comment?
 }

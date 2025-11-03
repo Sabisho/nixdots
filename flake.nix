@@ -1,7 +1,6 @@
 {
   description = "Klynt's NixOS config";
 
-  # Where we get our packages and tools from
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
 
@@ -16,31 +15,34 @@
     };
   };
 
-  # Our actual system configurations
   outputs = {
     nixpkgs,
     home-manager,
     ...
   } @ inputs: let
-    username = "klynt"; # Your username - change this once here
-  in {
-    # Define each computer you want to configure
-    nixosConfigurations = {
-      # === LAPTOP: Athena ===
-      Athena = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
+    username = "klynt";
+    stateVersion = "24.05";
+    system = "x86_64-linux";
 
+    pkgs = import nixpkgs {
+      inherit system;
+      config.allowUnfree = true;
+    };
+
+    # Helper function to create a system configuration
+    mkSystem = {
+      hostname,
+      profile,
+      type,
+    }:
+      nixpkgs.lib.nixosSystem {
+        inherit system pkgs;
         specialArgs = {
-          inherit inputs username;
-          hostname = "Athena";
-          profile = "nvidia-prime";
-          type = "laptop";
+          inherit inputs username stateVersion hostname profile type;
         };
-
         modules = [
-          ./hosts/laptop/Athena/configuration.nix
-          ./modules/drivers/nvidia-prime.nix
-
+          ./hosts/${type}/${hostname}/configuration.nix
+          ./modules/drivers/${profile}.nix
           home-manager.nixosModules.home-manager
           {
             home-manager = {
@@ -48,46 +50,23 @@
               useUserPackages = true;
               backupFileExtension = "hmbkp";
               users.${username} = import ./modules/home/home.nix;
-              extraSpecialArgs = {
-                inherit username;
-                hostname = "Athena";
-                type = "laptop";
-              };
+              extraSpecialArgs = {inherit username stateVersion hostname type;};
             };
           }
         ];
       };
+  in {
+    nixosConfigurations = {
+      Athena = mkSystem {
+        hostname = "Athena";
+        profile = "nvidia-prime";
+        type = "laptop";
+      };
 
-      # === DESKTOP: Aeirith ===
-      Aeirith = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-
-        specialArgs = {
-          inherit inputs username;
-          hostname = "Aeirith";
-          profile = "nvidia";
-          type = "desktop";
-        };
-
-        modules = [
-          ./hosts/desktop/Aeirith/configuration.nix
-          ./modules/drivers/nvidia.nix
-
-          home-manager.nixosModules.home-manager
-          {
-            home-manager = {
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              backupFileExtension = "hmbkp";
-              users.${username} = import ./modules/home/home.nix;
-              extraSpecialArgs = {
-                inherit username;
-                hostname = "Aeirith";
-                type = "desktop";
-              };
-            };
-          }
-        ];
+      Aeirith = mkSystem {
+        hostname = "Aeirith";
+        profile = "nvidia";
+        type = "desktop";
       };
     };
   };
