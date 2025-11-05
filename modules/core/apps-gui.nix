@@ -11,6 +11,7 @@
     meld
     mission-center
     picard
+    songrec
     qbittorrent
     zed-editor
     libreoffice-fresh

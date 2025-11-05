@@ -1,4 +1,4 @@
-{config, ...}: {
+{
   xdg.configFile."niri/config.kdl".text = ''
     // This config is being managed by Home Manager on NixOS!
     input {
@@ -74,12 +74,13 @@
 
     }
     window-rule {
-        open-maximized true
+        // open-maximized true
         geometry-corner-radius 10
         clip-to-geometry true
     }
     window-rule {
         match app-id="firefox"
+        match app-id="zen-beta"
         match app-id="code"
         match app-id="dev.zed.Zed"
         default-column-width {
@@ -308,8 +309,8 @@
         skip-at-startup
     }
     cursor {
-        // xcursor-theme "Bibata-Modern-Ice"
-        xcursor-theme "Banana"
+        xcursor-theme "Bibata-Modern-Ice"
+        // xcursor-theme "Banana"
         xcursor-size 24
         hide-when-typing
         hide-after-inactive-ms 1000
