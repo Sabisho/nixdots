@@ -5,6 +5,7 @@
 }: {
   environment.systemPackages = with pkgs; [
     distrobox
+    easyeffects
     gimp3
     gnome-disk-utility
     brave

@@ -5,8 +5,8 @@
 }: {
   home.packages = with pkgs; [
     brightnessctl
-    fuzzel
     gpu-screen-recorder-gtk
+    rofi
     hypridle
     hyprlock
     libnotify
