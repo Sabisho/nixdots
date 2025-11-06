@@ -1,6 +1,5 @@
 {
   imports = [
-    ./niri-pkgs.nix
-    ./niri-conf.nix
+    ./niri.nix
   ];
 }
