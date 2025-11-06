@@ -65,7 +65,7 @@
     spawn-at-startup "niriswitcher"
     spawn-at-startup "xwayland-satellite"
     spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
-    spawn-at-startup "wl-paste" "--watch" "cliphist" "store"
+    // spawn-at-startup "wl-paste" "--watch" "cliphist" "store"
     layer-rule {
         match namespace="^swww-daemon$"
         place-within-backdrop true
@@ -121,7 +121,7 @@
             spawn "~/.config/rofi/scripts/emoji_picker.sh"
         }
         Mod+C {
-            spawn "cliphist list | ~/.config/rofi/scripts/clipboard.sh | cliphist decode | wl-copy"
+            spawn "sh" "-c" "cliphist list | ~/.config/rofi/scripts/clipboard.sh | cliphist decode | wl-copy"
         }
         Mod+I {
             spawn "$NIRICONF/scripts/change-idle-time.sh"
