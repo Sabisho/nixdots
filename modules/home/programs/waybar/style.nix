@@ -1,8 +1,4 @@
-{
-  config,
-  lib,
-  ...
-}: let
+{config, ...}: let
   colors = config.waybar.colors;
 in {
   programs.waybar.style = ''

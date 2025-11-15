@@ -1,8 +1,4 @@
 {
-  config,
-  pkgs,
-  ...
-}: {
   programs.helix = {
     settings = {
       theme = "gruvbox_dark_hard";

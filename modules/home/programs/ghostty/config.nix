@@ -1,4 +1,4 @@
-{config, ...}: {
+{
   programs.ghostty = {
     settings = {
       theme = "Gruvbox Dark Hard";

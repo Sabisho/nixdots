@@ -1,8 +1,4 @@
-{
-  config,
-  lib,
-  ...
-}: {
+{lib, ...}: {
   options.waybar.colors = lib.mkOption {
     type = lib.types.attrs;
     default = {

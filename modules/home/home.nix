@@ -1,7 +1,4 @@
 {
-  config,
-  pkgs,
-  lib,
   username,
   stateVersion,
   ...
@@ -44,6 +41,7 @@
     ./programs/helix
     ./programs/waybar
     ./programs/niri
+    ./programs/hypr
     ./programs/fastfetch
     ./programs/ghostty
     ./programs/mako

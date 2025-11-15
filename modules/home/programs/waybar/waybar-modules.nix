@@ -1,8 +1,4 @@
 {
-  config,
-  pkgs,
-  ...
-}: {
   programs.waybar.settings.mainBar = {
     # ===== LEFT MODULES =====
     "custom/logo" = {

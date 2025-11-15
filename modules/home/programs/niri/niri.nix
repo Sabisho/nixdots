@@ -3,7 +3,6 @@
     brightnessctl
     gpu-screen-recorder-gtk
     hypridle
-    hyprlock
     libnotify
     # mako
     polkit_gnome
