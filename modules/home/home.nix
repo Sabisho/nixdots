@@ -51,7 +51,6 @@
     ./programs/swayimg
     ./programs/rofi
     ./theming
-    # inputs.zen-browser.homeModules.beta
   ];
 
   # Let Home Manager install and manage itself

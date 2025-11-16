@@ -12,7 +12,7 @@
     };
     font = {
       name = "Adwaita Sans Regular";
-      size = 11;
+      size = 12;
     };
   };
 }

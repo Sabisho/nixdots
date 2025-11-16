@@ -4,7 +4,7 @@ in {
   programs.waybar.style = ''
     * {
       font-family: "JetBrainsMono Nerd Font Propo";
-      font-size: 16px;
+      font-size: 18px;
     }
 
     window#waybar {
