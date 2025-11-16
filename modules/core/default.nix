@@ -13,7 +13,7 @@
     ./pipewire.nix
     ./themes.nix
     ./user-account.nix
-    ./virtualization.nix
+    # ./virtualization.nix
     ./window-manager.nix
     ./media-server.nix
   ];
