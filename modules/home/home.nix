@@ -4,7 +4,6 @@
   ...
 }: {
   home.username = username;
-  # home.homeDirectory = "/home/$(username)";
   home.stateVersion = stateVersion; # Please read the comment before changing.
 
   home.sessionVariables = {
@@ -36,8 +35,8 @@
 
   # Importing whole directory requires it having a default.nix file which imports other files in that directory.
   imports = [
-    ./programs/git.nix
-    ./programs/fish.nix
+    ./programs/git
+    ./programs/fish
     ./programs/helix
     ./programs/waybar
     ./programs/niri
@@ -50,6 +49,9 @@
     ./programs/newsraft
     ./programs/swayimg
     ./programs/rofi
+    ./programs/atuin
+    ./programs/zoxide
+    ./programs/starship
     ./theming
   ];
 

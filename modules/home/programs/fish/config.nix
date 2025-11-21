@@ -1,7 +1,5 @@
 {
   programs.fish = {
-    enable = true;
-
     # Disable the default greeting
     interactiveShellInit = ''
       set fish_greeting ""
@@ -45,25 +43,4 @@
   home.sessionPath = [
     "$HOME/.local/bin"
   ];
-
-  # Set environment variables
-  home.sessionVariables = {
-    BAT_THEME = "gruvbox-dark";
-  };
-
-  # Enable integrations for starship, zoxide, and atuin
-  programs.starship = {
-    enable = true;
-    enableFishIntegration = true;
-  };
-
-  programs.zoxide = {
-    enable = true;
-    enableFishIntegration = true;
-  };
-
-  programs.atuin = {
-    enable = true;
-    enableFishIntegration = true;
-  };
 }

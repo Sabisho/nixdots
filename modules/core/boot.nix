@@ -8,7 +8,10 @@
     };
     plymouth = {
       enable = true;
-      theme = "bgrt";
+      theme = "nixos-bgrt";
+      themePackages = [
+        pkgs.nixos-bgrt-plymouth
+      ];
     };
     consoleLogLevel = 3;
     initrd.verbose = false;

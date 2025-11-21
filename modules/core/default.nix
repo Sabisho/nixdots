@@ -11,7 +11,7 @@
     ./networking.nix
     ./nixgc.nix
     ./pipewire.nix
-    ./themes.nix
+    ./stylix.nix
     ./user-account.nix
     # ./virtualization.nix
     ./window-manager.nix

@@ -1,13 +1,6 @@
 {
   programs.waybar.settings.mainBar = {
     # ===== LEFT MODULES =====
-    "custom/logo" = {
-      format = "";
-      on-click = "rofi -show drun";
-      tooltip = true;
-      tooltip-format = "btw 😎";
-    };
-
     cpu = {
       format = " {usage}%";
       tooltip = true;
@@ -44,28 +37,21 @@
 
     "niri/window" = {
       format = "{title}";
-      rewrite = {
-        "(.*) - Mozilla Firefox" = "🌎 $1";
-        "(.*) - zsh" = "> [$1]";
-      };
     };
 
     # ===== CENTER MODULES =====
     "niri/workspaces" = {
       format = "{icon}";
       format-icons = {
-        browser = "";
-        discord = "";
-        chat = "<b></b>";
-        active = "";
-        default = "";
+        active = "";
+        default = "";
       };
     };
 
     # ===== RIGHT MODULES =====
     tray = {
       icon-size = 20;
-      spacing = 4;
+      spacing = 10;
     };
 
     idle_inhibitor = {
@@ -120,25 +106,21 @@
     };
 
     backlight = {
-      interval = 2;
-      align = 0;
-      rotate = 0;
       format = "{icon} {percent}%";
       format-icons = ["󰃜" "󰃞" "󰃟" "󰃠"];
       tooltip-format = "backlight {percent}%";
-      icon-size = 10;
       on-scroll-up = "brightnessctl s +5%";
       on-scroll-down = "brightnessctl s 5%-";
       smooth-scrolling-threshold = 1;
     };
 
     bluetooth = {
-      format = "";
-      format-disabled = "󰂳";
+      format = "󰂯";
+      format-disabled = "󰂲";
       format-connected = "󰂱 {num_connections}";
-      tooltip-format = " {device_alias}";
-      tooltip-format-connected = "{device_enumerate}";
-      tooltip-format-enumerate-connected = " {device_alias} 󰂄{device_battery_percentage}%";
+      tooltip-format = " {device_alias}";
+      tooltip-format-connected = " {device_enumerate}";
+      tooltip-format-enumerate-connected = " {device_alias} 󰂄{device_battery_percentage}%";
       tooltip = true;
       on-click = "blueman-manager &";
     };
@@ -147,13 +129,6 @@
       format = "󰥔 {:%H:%M} ";
       tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
       format-alt = "󰃭 {:%d-%m-%Y}";
-    };
-
-    "custom/power" = {
-      tooltip = true;
-      on-click = "wlogout &";
-      format = "󰐥";
-      tooltip-format = "Power Menu";
     };
   };
 }

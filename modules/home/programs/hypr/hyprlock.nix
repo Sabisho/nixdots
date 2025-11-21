@@ -14,8 +14,8 @@
         {
           monitor = "";
           path = "screenshot";
-          blur_passes = 3;
-          blur_size = 8;
+          # blur_passes = 3;
+          # blur_size = 8;
         }
       ];
 
@@ -36,7 +36,7 @@
         {
           monitor = "";
           text = ''cmd[update:60000] echo "$(date +"%A, %B %d")"'';
-          color = "rgba(255, 255, 255, 0.6)";
+          # color = "rgba(255, 255, 255, 0.6)";
           font_size = 24;
           font_family = "SF Pro Display";
           position = "0, 80";

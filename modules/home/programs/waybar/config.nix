@@ -4,13 +4,12 @@
       layer = "top";
       position = "top";
       margin-top = 5;
-      height = 34;
+      height = 40;
       width = 1910;
-      spacing = 2;
+      spacing = 10;
       reload_style_on_change = true;
 
       modules-left = [
-        "custom/logo"
         "cpu"
         "memory"
         "temperature"
@@ -24,12 +23,11 @@
         "tray"
         "idle_inhibitor"
         "network"
+        "bluetooth"
         "pulseaudio"
         "pulseaudio#microphone"
         "backlight"
-        "bluetooth"
         "clock"
-        "custom/power"
       ];
     };
   };

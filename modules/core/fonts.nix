@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   fonts.packages = with pkgs; [
-    adwaita-fonts
+    inter
+    ibm-plex
     corefonts
     liberation_ttf
     nerd-fonts.jetbrains-mono

@@ -4,7 +4,7 @@
     gpu-screen-recorder-gtk
     hypridle
     libnotify
-    # mako
+    mako
     polkit_gnome
     swww
     waypaper
@@ -141,9 +141,9 @@
         Mod+Backspace {
             spawn "~/.config/rofi/scripts/powermenu.sh"
         }
-        Alt+W {
-            spawn "waypaper"
-        }
+        // Alt+W {
+        //    spawn "waypaper"
+        // }
         // Backlight and Audio
         XF86MonBrightnessUp allow-when-locked=true {
             spawn "brightnessctl" "set" "+5%"
@@ -321,9 +321,6 @@
         skip-at-startup
     }
     cursor {
-        // xcursor-theme "Bibata-Modern-Ice"
-        xcursor-theme "Banana"
-        xcursor-size 24
         hide-when-typing
         hide-after-inactive-ms 1000
     }
