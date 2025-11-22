@@ -11,7 +11,7 @@
         "x-scheme-handler/unknown" = "zen-beta.desktop";
 
         # PDF viewer
-        "application/pdf" = "org.gnome.Papers-previewer.desktop";
+        "application/pdf" = "org.gnome.Papers.desktop";
 
         # Images
         "image/png" = "swayimg.desktop";
