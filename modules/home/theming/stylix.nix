@@ -17,7 +17,8 @@
       mpv.enable = true;
       fuzzel.enable = true;
       hyprland.enable = true;
-      cava.enable = true;
+      hyprlock.enable = false;
+      cava.rainbow.enable = true;
     };
   };
 }

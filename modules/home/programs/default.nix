@@ -1,0 +1,23 @@
+{
+  imports = [
+    ./atuin
+    ./bash
+    ./fastfetch
+    ./fish
+    ./fuzzel
+    ./ghostty
+    ./git
+    ./helix
+    ./hypr
+    ./mako
+    ./mpd
+    ./mpv
+    ./newsraft
+    ./niri
+    ./starship
+    ./swayimg
+    ./waybar
+    ./xdg
+    ./zoxide
+  ];
+}

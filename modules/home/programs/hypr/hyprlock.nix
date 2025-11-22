@@ -14,8 +14,8 @@
         {
           monitor = "";
           path = "screenshot";
-          # blur_passes = 3;
-          # blur_size = 8;
+          blur_size = 9;
+          blur_passes = 3;
         }
       ];
 
@@ -26,7 +26,7 @@
           text = ''cmd[update:1000] echo "$(date +"%H:%M")"'';
           color = "rgba(255, 255, 255, 0.9)";
           font_size = 120;
-          font_family = "SF Pro Display";
+          font_family = "Inter Display Black";
           position = "0, 200";
           halign = "center";
           valign = "center";
@@ -38,7 +38,7 @@
           text = ''cmd[update:60000] echo "$(date +"%A, %B %d")"'';
           # color = "rgba(255, 255, 255, 0.6)";
           font_size = 24;
-          font_family = "SF Pro Display";
+          font_family = "Inter Display Bold";
           position = "0, 80";
           halign = "center";
           valign = "center";
@@ -50,7 +50,7 @@
           text = "Type to unlock";
           color = "rgba(255, 255, 255, 0.4)";
           font_size = 16;
-          font_family = "SF Pro Display";
+          font_family = "Inter Display Medium";
           position = "0, -200";
           halign = "center";
           valign = "center";
