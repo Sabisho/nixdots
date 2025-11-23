@@ -19,6 +19,7 @@
       hyprland.enable = true;
       hyprlock.enable = false;
       cava.rainbow.enable = true;
+      gitui.enable = true;
     };
   };
 }

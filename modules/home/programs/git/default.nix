@@ -1,6 +1,11 @@
 {
-  programs.git = {
-    enable = true;
+  programs = {
+    git = {
+      enable = true;
+    };
+    gitui = {
+      enable = true;
+    };
   };
 
   imports = [
