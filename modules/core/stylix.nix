@@ -3,8 +3,8 @@
     enable = true;
     autoEnable = false;
     image = pkgs.fetchurl {
-      url = "https://w.wallhaven.cc/full/9o/wallhaven-9oozpx.png";
-      sha256 = "1gvjy4z4g0c4qiqky5lcxj62xd4y3zl4q6l4f3bxcv7hyg87zpbs";
+      url = "https://w.wallhaven.cc/full/13/wallhaven-13lpyg.jpg";
+      sha256 = "0my5vvxx8xf8gws3dvf7z374ihvr90d821yi73z8fvmnk49z54sw";
     };
     polarity = "dark";
     cursor = {
