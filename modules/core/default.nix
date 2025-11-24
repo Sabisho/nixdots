@@ -5,13 +5,13 @@
     ./bluetooth.nix
     ./boot.nix
     ./editor.nix
-    ./fonts.nix
     ./greetd.nix
     ./locale.nix
     ./networking.nix
     ./nixgc.nix
     ./pipewire.nix
-    ./stylix.nix
+    # ./stylix.nix
+    ./theming.nix
     ./user-account.nix
     # ./virtualization.nix
     ./window-manager.nix

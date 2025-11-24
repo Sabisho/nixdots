@@ -6,7 +6,7 @@
       margin-top = 5;
       height = 40;
       width = 1910;
-      spacing = 10;
+      spacing = 20;
       reload_style_on_change = true;
 
       modules-left = [

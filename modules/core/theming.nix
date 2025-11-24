@@ -10,4 +10,10 @@
     noto-fonts-color-emoji
     vista-fonts
   ];
+  # Removes these to use stylix
+  environment.systemPackages = with pkgs; [
+    gnome-themes-extra
+    bibata-cursors
+    papirus-icon-theme
+  ];
 }

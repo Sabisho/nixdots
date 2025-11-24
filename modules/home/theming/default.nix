@@ -1,6 +1,8 @@
 {
   imports = [
-    ./stylix.nix
+    # ./stylix.nix
+    ./gtk.nix
+    ./qt.nix
   ];
 
   fonts.fontconfig.enable = true;

@@ -4,7 +4,7 @@
       gtk.enable = true;
       btop.enable = true;
       mako.enable = true;
-      helix.enable = true;
+      helix.enable = false;
       ghostty.enable = true;
       qt.enable = true;
       fish.enable = true;

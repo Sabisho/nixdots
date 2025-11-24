@@ -1,7 +1,7 @@
 {
   programs.helix = {
     settings = {
-      # theme = "gruvbox-transparent";
+      theme = "gruvbox-transparent";
 
       editor = {
         line-number = "relative";

@@ -1,11 +1,11 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
-    grim
-    slurp
-    satty
+    # grim
+    # slurp
+    # satty
   ];
   imports = [
-    ./hyprland.nix
+    # ./hyprland.nix
     ./hyprlock.nix
   ];
 }

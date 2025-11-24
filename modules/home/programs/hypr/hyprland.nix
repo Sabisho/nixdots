@@ -19,7 +19,7 @@
 
       # ==================== AUTOSTART ====================
       exec-once = [
-        "waybar"
+        "ashell"
         "waypaper --restore"
         "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
         "hyprsunset"
