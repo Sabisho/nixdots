@@ -47,8 +47,8 @@
     "niri/workspaces" = {
       format = "{icon}";
       format-icons = {
-        active = "";
-        default = "";
+        active = "";
+        default = "";
       };
     };
 
@@ -88,7 +88,7 @@
     };
 
     pulseaudio = {
-      format = "{icon}  {volume}%";
+      format = "{icon} {volume}%";
       format-muted = "󰝟 {format_source}";
       format-bluetooth = "󰥰 {volume}%";
       format-bluetooth-muted = "󰗿 {icon}";

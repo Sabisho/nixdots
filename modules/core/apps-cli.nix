@@ -10,5 +10,6 @@
     yt-dlp
     btop
     figlet
+    tukai
   ];
 }

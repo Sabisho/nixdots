@@ -6,7 +6,7 @@
       window-decoration = "server";
       # Remove these lines for stylix
       theme = "Gruvbox Dark Hard";
-      background-opacity = 0.8;
+      background-opacity = 0.75;
     };
   };
 }

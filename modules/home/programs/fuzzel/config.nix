@@ -8,7 +8,7 @@
       };
       # Also comment out all the color settings when using stylix
       colors = {
-        background = "282828cc";
+        background = "282828bf";
         text = "ebdbb2ff";
         match = "fb4934ff";
         selection = "458588ff";

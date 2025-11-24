@@ -19,6 +19,7 @@
     libreoffice-fresh
     nautilus
     papers
+    pavucontrol
   ];
   programs.localsend.enable = true;
 }

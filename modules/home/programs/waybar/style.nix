@@ -1,15 +1,18 @@
 {
   programs.waybar.style = ''
      * {
-       font-family: "JetBrainsMono Nerd Font";
+       font-family: "JetBrainsMono Nerd Font Propo";
        font-size: 16px;
      }
 
      window#waybar {
-     background-color: rgba(0,0,0,0.5);
-      border-radius: 7rem;
-      border-width: 2px;
-      border-style: solid;
+     background-color: rgba(40,40,40,0.75);
+    }
+
+    .modules-left,
+    .modules-center,
+    .modules-right {
+      color: rgba(235, 219, 178,1);
     }
 
     #cpu {
