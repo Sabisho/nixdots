@@ -5,7 +5,6 @@
 }: {
   environment.systemPackages = with pkgs; [
     distrobox
-    easyeffects
     gimp3
     gnome-disk-utility
     brave
@@ -19,10 +18,7 @@
     libreoffice-fresh
     papers
     pavucontrol
-    # Remove these for home manager theming
-    nwg-look
-    kdePackages.qt6ct
-    libsForQt5.qt5ct
+    file-roller
   ];
   programs = {
     localsend.enable = true;

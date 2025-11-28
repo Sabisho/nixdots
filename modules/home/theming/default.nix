@@ -1,6 +1,7 @@
 {
   imports = [
     # ./stylix.nix
+    ./cursorTheme.nix
     ./gtk.nix
     ./qt.nix
   ];

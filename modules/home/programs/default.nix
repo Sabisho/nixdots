@@ -2,6 +2,7 @@
   imports = [
     ./atuin
     ./bash
+    ./easyeffects
     ./fastfetch
     ./fish
     ./fuzzel

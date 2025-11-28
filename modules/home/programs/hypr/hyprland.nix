@@ -55,8 +55,8 @@
         border_size = 2;
         allow_tearing = true;
         # Remove these when using stylix
-        "col.active_border" = "rgba(d65d0eff) rgba(fe8019ff) 45deg";
-        "col.inactive_border" = "rgba(504945ff)";
+        "col.active_border" = "rgba(458588ff) rgba(98971aff) 45deg";
+        "col.inactive_border" = "rgba(928374ff)";
       };
 
       # ==================== DECORATION ====================
@@ -72,14 +72,33 @@
       # ==================== ANIMATIONS ====================
       animations = {
         enabled = true;
-        bezier = "myBezier, 0.05, 0.9, 0.1, 1.05";
+
+        # Smooth, fluid bezier curves - no bounce
+        bezier = [
+          "easeOutQuint, 0.22, 1, 0.36, 1"
+          "easeInOutCubic, 0.65, 0, 0.35, 1"
+          "linear, 0, 0, 1, 1"
+          "easeOutExpo, 0.16, 1, 0.3, 1"
+        ];
+
         animation = [
-          "windows, 1, 7, myBezier"
-          "windowsOut, 1, 7, default, popin 80%"
-          "border, 1, 10, default"
-          "borderangle, 1, 8, default"
-          "fade, 1, 7, default"
-          "workspaces, 1, 6, default"
+          # Slow, smooth window animations
+          "windows, 1, 8, easeOutExpo, slide"
+          "windowsIn, 1, 8, easeOutExpo, slide"
+          "windowsOut, 1, 8, easeInOutCubic, slide"
+          "windowsMove, 1, 8, easeOutQuint, slide"
+
+          # Subtle border animations
+          "border, 1, 10, easeOutQuint"
+          "borderangle, 1, 100, linear, loop"
+
+          # Smooth fading
+          "fade, 1, 8, easeOutQuint"
+          "fadeIn, 1, 8, easeOutExpo"
+          "fadeOut, 1, 8, easeInOutCubic"
+
+          # Gentle workspace transitions
+          "workspaces, 1, 9, easeOutExpo, slide"
         ];
       };
 
@@ -203,6 +222,8 @@
         "blurpopups, waybar"
         "ignorezero, launcher"
         "blur, launcher"
+        "ignorezero, notifications"
+        "blur, notifications"
       ];
 
       # ==================== WINDOW RULES ====================
@@ -212,7 +233,7 @@
         "workspace 1, class:(Alacritty)$"
         "workspace 2, class:(zen-beta)$"
         "workspace 3, class:(nautilus)$"
-        "workspace 3, class:(thunar)$"
+        "workspace 3, class:(Thunar)$"
         "workspace 3, title:^(yazi)$"
         "workspace 4, class:(mpv)$"
         "workspace 4, class:(ncmpcpp)$"
