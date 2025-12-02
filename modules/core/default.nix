@@ -8,7 +8,7 @@
     ./greetd.nix
     ./locale.nix
     ./networking.nix
-    ./nix-helper.nix
+    ./nixos-settings.nix
     ./pipewire.nix
     # ./stylix.nix
     ./theming.nix
