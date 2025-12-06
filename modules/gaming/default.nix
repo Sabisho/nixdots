@@ -1,9 +1,9 @@
 {
   imports = [
     ./gamemode.nix
-    ./heroic-games-launcher.nix
+    # ./heroic-games-launcher.nix
     ./lutris.nix
-    ./minecraft.nix
+    # ./minecraft.nix
     ./proton-manager.nix
     ./steam.nix
     ./mangohud.nix

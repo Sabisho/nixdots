@@ -15,7 +15,7 @@
     songrec
     qbittorrent
     zed-editor
-    libreoffice-fresh
+    # libreoffice-fresh
     papers
     pavucontrol
     file-roller
