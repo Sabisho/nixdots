@@ -3,8 +3,9 @@
     git = {
       enable = true;
     };
-    gitui = {
+    lazygit = {
       enable = true;
+      enableFishIntegration = true;
     };
   };
 

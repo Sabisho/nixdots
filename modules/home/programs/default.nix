@@ -1,5 +1,7 @@
 {
   imports = [
+    ./apps-cli.nix
+    ./apps-gui.nix
     ./atuin
     ./bash
     ./easyeffects

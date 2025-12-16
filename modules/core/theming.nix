@@ -9,6 +9,7 @@
     noto-fonts-cjk-sans
     noto-fonts-color-emoji
     vista-fonts
+    miracode
   ];
 
   # Removes these to use stylix
