@@ -114,9 +114,6 @@
         Alt+E {
             spawn "thunar"
         }
-        Mod+L {
-            spawn "hyprlock"
-        }
         Mod+C {
             spawn "~/.config/fuzzel/clipboard.sh"
         }
@@ -158,67 +155,46 @@
         Mod+W {
             switch-preset-column-width
         }
-        Mod+H {
-            switch-preset-window-height
-        }
         Mod+T {
             toggle-window-floating
         }
         Mod+M {
             maximize-column
         }
-        Mod+Shift+M {
+        Mod+Ctrl+M {
             maximize-window-to-edges
         }
         Mod+F {
             fullscreen-window
         }
-        Mod+Left {
+        Mod+H {
             focus-column-left
         }
-        Mod+Right {
+        Mod+L {
             focus-column-right
         }
-        Mod+Down {
+        Mod+J {
             focus-window-down
         }
-        Mod+Up {
+        Mod+K {
             focus-window-up
         }
-        Mod+Ctrl+Left {
+        Mod+Shift+H {
             move-column-left
         }
-        Mod+Ctrl+Right {
+        Mod+Shift+L {
             move-column-right
         }
-        Mod+Ctrl+Down {
-            move-window-down
-        }
-        Mod+Ctrl+Up {
-            move-window-up
-        }
-        Mod+Home {
-            focus-column-first
-        }
-        Mod+End {
-            focus-column-last
-        }
-        Mod+Ctrl+Home {
-            move-column-to-first
-        }
-        Mod+Ctrl+End {
-            move-column-to-last
-        }
-        Mod+Shift+Left {
+        Mod+Ctrl+H {
             set-column-width "-10%"
         }
-        Mod+Shift+Right {
+        Mod+Ctrl+L {
             set-column-width "+10%"
         }
-        Mod+Shift+Up {
+        Mod+Ctrl+K {
             set-window-height "+10%"
         }
-        Mod+Shift+Down {
+        Mod+Ctrl+J {
             set-window-height "-10%"
         }
         Mod+BracketLeft {
@@ -237,16 +213,16 @@
             spawn "pkill" "-USR1" "niriswitcher"
         }
         // Workspaces
-        Mod+Page_Down {
+        Mod+D {
             focus-workspace-down
         }
-        Mod+Page_Up {
+        Mod+U {
             focus-workspace-up
         }
-        Mod+Shift+Page_Down {
+        Mod+Shift+D {
             move-column-to-workspace-down
         }
-        Mod+Shift+Page_Up {
+        Mod+Shift+U {
             move-column-to-workspace-up
         }
         Mod+Shift+1 {
@@ -279,7 +255,7 @@
         Mod+Shift+0 {
             move-column-to-workspace 10
         }
-        Mod+A {
+        Mod+O {
             toggle-overview
         }
         // Screenshots
