@@ -1,8 +1,10 @@
 {
   programs.git = {
     settings = {
-      user.name = "helixoid";
-      user.email = "ayushrajmth91@gmail.com";
+      user = {
+        name = "helixoid";
+        email = "ayushrajmth91@gmail.com";
+      };
     };
   };
 }
