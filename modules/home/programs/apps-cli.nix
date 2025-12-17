@@ -1,4 +1,4 @@
-{pkgs, ...}:{
+{pkgs, ...}: {
   home.packages = with pkgs; [
     fd
     tealdeer
@@ -12,5 +12,6 @@
     btop
     figlet
     tukai
+    pastel
   ];
 }

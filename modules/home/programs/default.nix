@@ -12,6 +12,7 @@
     ./git
     ./helix
     # ./hypr
+    ./jujutsu
     ./mako
     ./mpd
     ./mpv
