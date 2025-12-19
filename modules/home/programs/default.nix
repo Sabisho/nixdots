@@ -10,7 +10,7 @@
     ./fuzzel
     ./gaming
     ./ghostty
-    # ./git
+    ./git
     ./helix
     # ./hypr
     ./jujutsu
