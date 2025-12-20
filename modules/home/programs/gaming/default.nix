@@ -1,9 +1,7 @@
 {
   imports = [
-    # ./heroic.nix
-    ./lutris.nix
+    ./heroic.nix
     ./mangohud.nix
     # ./minecraft.nix
-    ./proton-manager.nix
   ];
 }
