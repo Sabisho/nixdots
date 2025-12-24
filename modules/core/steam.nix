@@ -1,3 +1,8 @@
-{
-  programs.steam.enable = true;
+{pkgs, ...}: {
+  programs.steam = {
+    enable = true;
+    extraPackages = with pkgs; [
+      bibata-cursors
+    ];
+  };
 }
