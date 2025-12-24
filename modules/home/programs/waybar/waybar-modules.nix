@@ -64,7 +64,7 @@
     # ===== RIGHT MODULES =====
     tray = {
       icon-size = 16;
-      spacing = 10;
+      spacing = 20;
     };
 
     idle_inhibitor = {

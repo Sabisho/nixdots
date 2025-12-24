@@ -26,7 +26,7 @@
         position x=0 y=0
     }
     layout {
-        gaps 5
+        gaps 10
         center-focused-column "never"
         preset-column-widths {
             proportion 0.33333
