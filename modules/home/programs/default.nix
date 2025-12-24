@@ -4,6 +4,7 @@
     ./apps-gui.nix
     ./atuin
     ./bash
+    ./btop
     ./easyeffects
     ./fastfetch
     ./fish

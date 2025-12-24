@@ -9,7 +9,6 @@
     ripgrep
     wget
     yt-dlp
-    btop
     figlet
     tukai
     pastel
