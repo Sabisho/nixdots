@@ -1,9 +1,9 @@
 {
   programs.ssh = {
-    addKeysToAgent = "yes";
-
-    matchBlocks."github.com" = {
-      identityFile = "~/.ssh/id_ed25519";
+    enableDefaultConfig = false;
+    matchBlocks = {
+      "*".addKeysToAgent = "yes";
+      "github.com".identityFile = "~/.ssh/id_ed25519";
     };
   };
 }
