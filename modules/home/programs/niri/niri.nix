@@ -111,6 +111,9 @@
         Alt+E {
             spawn "thunar"
         }
+        Alt+W {
+            spawn "waypaper"
+        }
         Mod+C {
             spawn "sh" "-c" "pkill fuzzel || ~/.config/fuzzel/clipboard.sh"
         }

@@ -6,6 +6,7 @@
     ./boot.nix
     ./editor.nix
     ./gamemode.nix
+    ./gamescope.nix
     ./greetd.nix
     ./locale.nix
     ./networking.nix
