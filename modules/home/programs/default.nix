@@ -20,6 +20,7 @@
     ./mpv
     ./newsraft
     ./niri
+    ./ssh
     ./starship
     ./swayimg
     ./waybar
