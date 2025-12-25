@@ -10,8 +10,11 @@
   home.packages = with pkgs; [
     alejandra
     nixd
-    charm-freeze
     typst
     tinymist
+    rustc
+    rust-analyzer
+    rustfmt
+    rustlings
   ];
 }

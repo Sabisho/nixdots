@@ -13,6 +13,6 @@
     tukai
     pastel
     onefetch
-    rustlings
+    charm-freeze
   ];
 }
