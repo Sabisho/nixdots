@@ -21,6 +21,8 @@
       lla = "eza --icons=always -la";
       lt = "eza --icons=always -la --tree";
       ytm = "yt-dlp -x --embed-metadata";
+      jsm = "jj bookmark set main";
+      jpm = "jj git push --branch main";
     };
 
     functions = {
