@@ -21,8 +21,7 @@
       lla = "eza --icons=always -la";
       lt = "eza --icons=always -la --tree";
       ytm = "yt-dlp -x --embed-metadata";
-      jsm = "jj bookmark set main";
-      jpm = "jj git push --branch main";
+      dfp = "cd ~/nixdots && jj desc && jj bookmark set main && jj new && jj git push --branch main; or echo 'Push cancelled'";
     };
 
     functions = {
