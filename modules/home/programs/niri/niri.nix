@@ -95,6 +95,10 @@
         open-floating true
         shadow {
             on
+            softness 50
+            spread 8
+            offset x=0 y=8
+            color "#00000090"
         }
     }
     binds {
@@ -278,6 +282,16 @@
     cursor {
         hide-when-typing
         hide-after-inactive-ms 1000
+    }
+    environment {
+    }
+    overview {
+        workspace-shadow {
+        softness 60
+        spread 15
+        offset x=0 y=15
+        color "#00000070"
+        }
     }
   '';
 }
