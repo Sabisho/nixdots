@@ -1,4 +1,4 @@
-{pkgs,...}:{
+{pkgs, ...}: {
   home.packages = with pkgs; [
     gimp3
     gnome-disk-utility

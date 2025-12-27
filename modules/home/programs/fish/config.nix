@@ -22,6 +22,7 @@
       lt = "eza --icons=always -la --tree";
       ytm = "yt-dlp -x --embed-metadata";
       dfp = "cd ~/nixdots && jj desc && jj bookmark set main && jj new && jj git push --branch main; or echo 'Push cancelled'";
+      isodd = "caligula burn";
     };
 
     functions = {

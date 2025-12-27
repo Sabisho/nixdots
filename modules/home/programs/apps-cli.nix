@@ -14,5 +14,6 @@
     pastel
     onefetch
     charm-freeze
+    caligula
   ];
 }
