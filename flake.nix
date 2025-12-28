@@ -76,7 +76,7 @@
               useUserPackages = true;
               backupFileExtension = "hmbak";
               users.${username} = import ./modules/home/home.nix;
-              extraSpecialArgs = {inherit username stateVersion hostname type;};
+              extraSpecialArgs = {inherit inputs username stateVersion hostname type;};
             };
           }
         ];

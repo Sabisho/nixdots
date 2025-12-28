@@ -79,7 +79,6 @@
         match app-id="gimp"
         match app-id="com.mitchellh.ghostty"
         match app-id="dev.zed.Zed"
-        match app-id="org.qbittorrent.qBittorrent"
         default-column-width {
             proportion 1.0
         }

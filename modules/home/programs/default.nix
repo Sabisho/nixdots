@@ -25,6 +25,7 @@
     ./swayimg
     ./waybar
     ./xdg
+    ./zen-browser
     ./zoxide
   ];
 }

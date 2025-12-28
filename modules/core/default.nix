@@ -1,7 +1,5 @@
 {
   imports = [
-    ./apps-cli.nix
-    ./apps-gui.nix
     ./bluetooth.nix
     ./boot.nix
     ./editor.nix
@@ -15,6 +13,7 @@
     ./steam.nix
     # ./stylix.nix
     ./theming.nix
+    ./thunar.nix
     ./user-account.nix
     # ./virtualization.nix
     ./window-manager.nix
