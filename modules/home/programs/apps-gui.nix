@@ -3,7 +3,6 @@
     gimp3
     gnome-disk-utility
     brave
-    meld
     mission-center
     picard
     songrec
