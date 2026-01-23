@@ -5,8 +5,9 @@
     ./atuin
     ./bash
     ./btop
+    ./cava
     # ./easyeffects
-    ./eilmeldung
+    # ./eilmeldung
     ./fastfetch
     ./fish
     ./fuzzel
@@ -21,6 +22,7 @@
     ./mpv
     ./newsraft
     ./niri
+    ./rmpc
     ./ssh
     ./starship
     ./swayimg

@@ -4,8 +4,8 @@
     ./bluetooth.nix
     ./boot.nix
     ./editor.nix
-    ./gamemode.nix
-    ./gamescope.nix
+    # ./gamemode.nix
+    # ./gamescope.nix
     ./greetd.nix
     ./locale.nix
     ./localsend.nix
