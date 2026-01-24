@@ -13,7 +13,7 @@
     ./nixos-settings.nix
     ./pipewire.nix
     # ./steam.nix
-    ./stylix.nix
+    # ./stylix.nix
     ./theming.nix
     ./thunar.nix
     ./user-account.nix

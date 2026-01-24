@@ -2,8 +2,9 @@
   imports = [
     ./config.nix
     ./waybar-modules.nix
+    # ./stylix-theme.nix
     # Stylix: Comment out style.nix when using stylix.
-    # ./style.nix
+    ./gruvbox-theme.nix
   ];
 
   programs.waybar = {

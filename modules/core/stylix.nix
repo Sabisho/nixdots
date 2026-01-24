@@ -6,7 +6,7 @@
     #   url = "https://w.wallhaven.cc/full/13/wallhaven-13lpyg.jpg";
     #   sha256 = "0my5vvxx8xf8gws3dvf7z374ihvr90d821yi73z8fvmnk49z54sw";
     # };
-    image = ../../Wallpapers/Japan.jpg;
+    image = ../../Wallpapers/Lain.png;
     polarity = "dark";
     cursor = {
       package = pkgs.bibata-cursors;

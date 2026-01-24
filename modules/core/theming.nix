@@ -12,10 +12,10 @@
     miracode
   ];
 
-  # Removes these to use stylix
-  # environment.systemPackages = with pkgs; [
-  #   gnome-themes-extra
-  #   papirus-icon-theme
-  #   bibata-cursors
-  # ];
+  # Stylix: Removes these to use stylix
+  environment.systemPackages = with pkgs; [
+    gnome-themes-extra
+    papirus-icon-theme
+    bibata-cursors
+  ];
 }

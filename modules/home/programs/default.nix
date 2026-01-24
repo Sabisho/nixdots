@@ -23,6 +23,7 @@
     ./neovim
     ./newsraft
     ./niri
+    # ./noctalia
     ./rmpc
     ./ssh
     ./starship
