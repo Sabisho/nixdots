@@ -1,6 +1,6 @@
 {
   programs.nixvim = {
-    defaultEditor = true;
+    defaultEditor = false;
     vimAlias = true;
     viAlias = true;
 
