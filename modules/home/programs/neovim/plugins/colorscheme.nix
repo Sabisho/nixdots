@@ -12,6 +12,9 @@
           folds = true;
         };
         transparent_mode = true;
+        overrides = {
+          Pmenu = {link = "Normal";};
+        };
       };
     };
   };

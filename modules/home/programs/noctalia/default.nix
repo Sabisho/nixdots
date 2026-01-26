@@ -1,4 +1,5 @@
 {inputs, ...}: {
+  # NOTE: Add flake input for noctalia from github to access these features.
   imports = [
     inputs.noctalia.homeModules.default
   ];

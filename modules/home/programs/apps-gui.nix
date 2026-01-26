@@ -1,19 +1,19 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
+    brave
+    file-roller
     gimp3
     gnome-disk-utility
-    brave
-    mission-center
-    picard
-    songrec
-    qbittorrent
-    zed-editor
     libreoffice-fresh
+    mission-center
+    obs-studio
     papers
     pavucontrol
-    file-roller
+    picard
+    qbittorrent
     readest
     rnote
-    obs-studio
+    songrec
+    zed-editor
   ];
 }

@@ -13,6 +13,10 @@
         cursorline = true;
         end-of-line-diagnostics = "hint";
 
+        indent-guides = {
+          render = true;
+        };
+
         lsp = {
           display-inlay-hints = true;
         };
@@ -24,8 +28,8 @@
         };
 
         statusline = {
-          left = ["mode" "spinner" "file-name" "file-modification-indicator"];
-          center = ["file-type"];
+          left = ["mode" "file-name" "file-modification-indicator"];
+          center = ["spinner" "file-type"];
           right = ["diagnostics" "selections" "position" "file-encoding" "file-line-ending"];
           separator = "│";
 
@@ -65,6 +69,7 @@
         "ui.menu" = {};
         "ui.help" = {};
       };
+
       gruvbox-transparent = {
         inherits = "gruvbox_dark_hard";
         "ui.background" = {};

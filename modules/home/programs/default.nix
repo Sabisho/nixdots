@@ -21,7 +21,7 @@
     ./mako
     ./mpd
     ./mpv
-    # ./neovim
+    ./neovim
     ./newsraft
     ./niri
     # ./noctalia

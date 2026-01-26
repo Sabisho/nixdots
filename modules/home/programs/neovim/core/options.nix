@@ -1,9 +1,5 @@
 {
   programs.nixvim = {
-    defaultEditor = false;
-    vimAlias = true;
-    viAlias = true;
-
     globals.mapleader = " ";
 
     opts = {

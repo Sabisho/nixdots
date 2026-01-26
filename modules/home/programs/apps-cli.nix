@@ -1,21 +1,21 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
-    fd
-    tealdeer
+    bat
+    caligula
+    charm-freeze
+    cmd-wrapped
     dysk
     eza
-    yazi
-    bat
-    ripgrep
-    wget
-    yt-dlp
+    fd
     figlet
-    tukai
-    pastel
-    onefetch
-    charm-freeze
     glow
-    caligula
-    cmd-wrapped
+    onefetch
+    pastel
+    ripgrep
+    tealdeer
+    tukai
+    wget
+    yazi
+    yt-dlp
   ];
 }
