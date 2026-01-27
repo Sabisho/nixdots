@@ -5,6 +5,7 @@
     ./formatter.nix
     ./lsp.nix
     # ./mini.nix
+    ./noice.nix
     ./snacks.nix
     ./statusline.nix
     ./treesitter.nix

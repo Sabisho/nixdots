@@ -29,3 +29,7 @@
       3. Press `Ctrl+r`
       4. Press `#` option for selection indices.
       5. Back to single cursor mode.
+
+# Changing the casing.
+  - It can change the case of any character under cursor.
+  - `~` is the keybind or <Shift+`>.      

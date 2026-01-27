@@ -56,6 +56,9 @@
 
         normal = {
           ret = "goto_word";
+          space = {
+            n = ":open ~/nixdots/";
+          };
         };
       };
     };
