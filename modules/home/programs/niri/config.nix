@@ -86,10 +86,12 @@
         default-column-width {
             proportion 1.0
         }
+        // open-maximized true
     }
     window-rule {
         match app-id="org.gnome.Calculator"
         match app-id="steam"
+        match app-id="Alacritty"
         match app-id="org.pulseaudio.pavucontrol"
         match app-id="waypaper"
         match app-id="thunar"
@@ -107,7 +109,7 @@
     binds {
         // Applications
         Mod+Return {
-            spawn "kitty"
+            spawn "alacritty"
         }
         Mod+Space {
             spawn "sh" "-c" "pkill fuzzel || fuzzel"

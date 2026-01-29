@@ -1,5 +1,6 @@
 {
   imports = [
+    ./alacritty
     ./apps-cli.nix
     ./apps-gui.nix
     ./atuin
@@ -17,7 +18,7 @@
     ./helix
     # ./hypr
     ./jujutsu
-    ./kitty
+    # ./kitty
     ./mako
     ./mpd
     ./mpv
