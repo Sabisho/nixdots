@@ -15,7 +15,8 @@
     readest
     rnote
     songrec
-    transmission_4-qt6
+    transmission_4-gtk
+    zathura
     zed-editor
   ];
 }

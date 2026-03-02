@@ -11,7 +11,7 @@
     # ./eilmeldung
     ./fastfetch
     ./fish
-    ./fuzzel
+    # ./fuzzel
     ./gaming
     # ./ghostty
     ./git

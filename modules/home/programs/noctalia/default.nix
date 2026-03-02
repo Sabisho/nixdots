@@ -4,10 +4,11 @@
     inputs.noctalia.homeModules.default
   ];
 
+  services.cliphist.enable = true;
+
   # configure options
   programs.noctalia-shell = {
     enable = true;
-    systemd.enable = true;
     settings = {
       # configure noctalia here
       bar = {

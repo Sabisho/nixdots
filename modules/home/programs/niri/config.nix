@@ -63,21 +63,20 @@
         background-color "transparent"
     }
     // startup processes
-    // spawn-at-startup "swww-daemon"
-    spawn-at-startup "niriswitcher"
+    spawn-at-startup "noctalia-shell"
     spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
-    spawn-at-startup "cliphist" "wipe"
+    // spawn-at-startup "cliphist" "wipe"
     layer-rule {
         match namespace="^swww-daemon$"
         place-within-backdrop true
     }
     layer-rule {
-        match namespace="noctalia-wallpaper-eDP-1"
+        match namespace="^noctalia-wallpaper*"
         place-within-backdrop true
     }
     window-rule {
         // open-maximized true
-        geometry-corner-radius 10
+        geometry-corner-radius 20
         clip-to-geometry true
     }
     window-rule {
@@ -116,7 +115,7 @@
             spawn "alacritty"
         }
         Mod+Space {
-            spawn "sh" "-c" "pkill fuzzel || fuzzel"
+            spawn-sh "noctalia-shell ipc call launcher toggle"
         }
         Alt+I {
             spawn "zen"
@@ -125,26 +124,26 @@
             spawn "thunar"
         }
         Mod+C {
-            spawn "sh" "-c" "pkill fuzzel || ~/.config/fuzzel/clipboard.sh"
+            spawn-sh "noctalia-shell ipc call launcher clipboard"
         }
         Mod+Backspace {
-            spawn "sh" "-c" "pkill fuzzel || ~/.config/fuzzel/powermenu.sh"
+            spawn-sh "noctalia-shell ipc call sessionMenu toggle"
         }
         // Backlight and Audio
         XF86MonBrightnessUp allow-when-locked=true {
-            spawn "brightnessctl" "set" "+5%"
+            spawn "noctalia-shell" "ipc" "call" "brightness" "increase"
         }
         XF86MonBrightnessDown allow-when-locked=true {
-            spawn "brightnessctl" "set" "5%-"
+            spawn "noctalia-shell" "ipc" "call" "brightness" "decrease"
         }
         XF86AudioRaiseVolume allow-when-locked=true {
-            spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.05+"
+            spawn "noctalia-shell" "ipc" "call" "volume" "increase"
         }
         XF86AudioLowerVolume allow-when-locked=true {
-            spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.05-"
+            spawn "noctalia-shell" "ipc" "call" "volume" "decrease"
         }
         XF86AudioMute allow-when-locked=true {
-            spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"
+            spawn "noctalia-shell" "ipc" "call" "volume" "muteOutput"
         }
         XF86AudioPlay allow-when-locked=true {
             spawn "playerctl" "play-pause"
@@ -263,6 +262,10 @@
         offset x=0 y=15
         color "#00000070"
         }
+    }
+    debug {
+        // Allows notification actions and window activation from Noctalia.
+        honor-xdg-activation-with-invalid-serial
     }
   '';
 }
