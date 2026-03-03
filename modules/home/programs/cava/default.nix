@@ -1,9 +1,11 @@
 {
+  imports = [./config.nix];
   programs.cava = {
     enable = true;
-    settings = {
-      general.framerate = 60;
-      input.method = "pipewire";
-    };
+    #   settings = {
+    #     general.framerate = 60;
+    #     input.method = "pipewire";
+    #   };
+    # };
   };
 }
