@@ -5,6 +5,7 @@
         keyboard {
             xkb {
                 layout "us"
+                options "caps:escape"
             }
             numlock
         }
@@ -105,7 +106,7 @@
     binds {
         // Applications
         Mod+Return {
-            spawn "alacritty"
+            spawn "kitty"
         }
         Mod+Space {
             spawn-sh "noctalia-shell ipc call launcher toggle"

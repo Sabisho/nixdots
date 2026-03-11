@@ -3,6 +3,7 @@
     # Disable the default greeting
     interactiveShellInit = ''
       set fish_greeting ""
+      fish_vi_key_bindings
     '';
 
     shellAliases = {
@@ -12,6 +13,7 @@
       nhs = "nh os switch --ask";
       nhb = "nh os boot --ask";
       h = "hx";
+      v = "nvim";
       mpc = "rmpc";
       prop = "hyprctl clients | grep -i 'class\\|title\\|xwayland'";
       ls = "eza --icons=always";

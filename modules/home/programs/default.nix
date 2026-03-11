@@ -1,6 +1,6 @@
 {
   imports = [
-    ./alacritty
+    # ./alacritty
     ./apps-cli.nix
     ./apps-gui.nix
     ./atuin
@@ -13,12 +13,12 @@
     ./fish
     # ./fuzzel
     ./gaming
-    ./ghostty
+    # ./ghostty
     ./git
-    ./helix
+    # ./helix
     # ./hypr
     ./jujutsu
-    # ./kitty
+    ./kitty
     # ./mako
     ./mpd
     ./mpv

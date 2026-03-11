@@ -7,12 +7,12 @@
         action = ":q!<CR>";
       }
       {
-        key = "<leader>ff";
+        key = "<leader>f";
         mode = "n";
         action = "<cmd>lua Snacks.picker.files()<CR>";
         options = {
           silent = true;
-          desc = "Files";
+          desc = "Find Files";
         };
       }
       {
@@ -21,20 +21,20 @@
         action = "<cmd>lua Snacks.explorer()<CR>";
         options = {
           silent = true;
-          desc = "Files";
+          desc = "File Explorer";
         };
       }
       {
-        key = "<leader>fb";
+        key = "<leader>b";
         mode = "n";
         action = "<cmd>lua Snacks.picker.buffers()<CR>";
         options = {
           silent = true;
-          desc = "Buffers";
+          desc = "Find Buffers";
         };
       }
       {
-        key = "<leader>fg";
+        key = "<leader>/";
         mode = "n";
         action = "<cmd>lua Snacks.picker.grep()<CR>";
         options = {
@@ -43,12 +43,12 @@
         };
       }
       {
-        key = "<leader>fr";
+        key = "<leader>r";
         mode = "n";
         action = "<cmd>lua Snacks.picker.recent()<CR>";
         options = {
           silent = true;
-          desc = "Recent";
+          desc = "Find Recent Files";
         };
       }
       {
@@ -67,6 +67,15 @@
         options = {
           silent = true;
           desc = "Next Buffer";
+        };
+      }
+      {
+        key = "<leader>c";
+        mode = "n";
+        action = "<cmd>lua Snacks.picker.files({ cwd = vim.fn.expand('~/nixdots')})<CR>";
+        options = {
+          silent = true;
+          desc = "Open NixOS Configs";
         };
       }
     ];
