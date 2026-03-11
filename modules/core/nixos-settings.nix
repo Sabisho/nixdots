@@ -17,7 +17,12 @@
     };
   };
 
-  zramSwap.enable = true;
+  zramSwap = {
+    enable = true;
+    priority = 100;
+    algorithm = "zstd";
+    memoryPercent = 50;
+  };
 
   services = {
     fstrim.enable = true;
