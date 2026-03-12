@@ -8,6 +8,7 @@
     ./btop
     ./cava
     # ./easyeffects
+    ./editors
     # ./eilmeldung
     ./fastfetch
     ./fish
@@ -15,14 +16,12 @@
     ./gaming
     # ./ghostty
     ./git
-    # ./helix
     # ./hypr
     ./jujutsu
     ./kitty
     # ./mako
     ./mpd
     ./mpv
-    ./neovim
     ./newsraft
     ./niri
     ./noctalia

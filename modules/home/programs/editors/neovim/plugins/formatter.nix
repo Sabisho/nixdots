@@ -3,16 +3,13 @@
     plugins = {
       conform-nvim = {
         enable = true;
+        autoInstall.enable = true;
         settings = {
           format_on_save = {timeout_ms = 500;};
           formatters_by_ft = {
-            bash = [
-              "shellcheck"
-              "shellharden"
-              "shfmt"
-            ];
-            cpp = ["clang_format"];
+            c = ["clang_format"];
             nix = ["alejandra"];
+            rust = ["rustfmt"];
           };
         };
       };
