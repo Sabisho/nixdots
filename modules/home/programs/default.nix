@@ -14,11 +14,11 @@
     ./fish
     # ./fuzzel
     ./gaming
-    # ./ghostty
+    ./ghostty
     ./git
     # ./hypr
     ./jujutsu
-    ./kitty
+    # ./kitty
     # ./mako
     ./mpd
     ./mpv

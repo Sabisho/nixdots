@@ -7,9 +7,9 @@
     username = username;
     stateVersion = stateVersion; # Please read the comment before changing.
     sessionVariables = {
-      EDITOR = "hx";
-      sudoedit = "hx";
-      VISUAL = "hx";
+      EDITOR = "nvim";
+      sudoedit = "nvim";
+      VISUAL = "nvim";
       TERMINAL = "ghostty";
       MPD_HOST = "localhost";
     };
