@@ -16,6 +16,7 @@
     tealdeer
     tukai
     wget
+    wiremix
     yazi
     yt-dlp
   ];

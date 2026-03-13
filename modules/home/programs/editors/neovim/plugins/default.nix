@@ -8,7 +8,7 @@
     ./mini.nix
     ./noice.nix
     ./snacks.nix
-    # ./statusline.nix
+    ./statusline.nix
     ./tiny-inline-diagnostics.nix
     ./treesitter.nix
     ./which-key.nix
