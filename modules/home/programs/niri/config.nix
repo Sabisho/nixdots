@@ -106,7 +106,7 @@
     binds {
         // Applications
         Mod+Return {
-            spawn "ghostty"
+          spawn "kitty"
         }
         Mod+Space {
             spawn-sh "noctalia-shell ipc call launcher toggle"

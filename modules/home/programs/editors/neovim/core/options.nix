@@ -44,5 +44,17 @@
       foldlevel = 99;
       foldenable = false;
     };
+
+    # Diagnostics Icons in the gutter.
+    diagnostic.settings = {
+      signs = {
+        text = {
+          "__rawKey__vim.diagnostic.severity.ERROR" = "";
+          "__rawKey__vim.diagnostic.severity.WARN" = "";
+          "__rawKey__vim.diagnostic.severity.HINT" = "󰌵";
+          "__rawKey__vim.diagnostic.severity.INFO" = "";
+        };
+      };
+    };
   };
 }

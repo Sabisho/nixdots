@@ -4,6 +4,7 @@
     ./colorscheme.nix
     ./formatter.nix
     ./gitsigns.nix
+    ./helper-plugins.nix
     ./lsp.nix
     ./mini.nix
     ./noice.nix

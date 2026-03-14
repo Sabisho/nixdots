@@ -16,7 +16,7 @@
 
   programs.nixvim = {
     enable = true;
-    vimAlias = true;
     viAlias = true;
+    vimAlias = true;
   };
 }

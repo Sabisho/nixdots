@@ -1,5 +1,5 @@
 {
-  description = "Klynt's NixOS config";
+  description = "sabisho's NixOS config";
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
@@ -42,7 +42,7 @@
     ...
   } @ inputs: let
     # === Global Configuration ===
-    username = "klynt";
+    username = "sabisho";
     stateVersion = "25.11";
     system = "x86_64-linux";
 
